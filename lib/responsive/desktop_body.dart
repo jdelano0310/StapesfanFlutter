@@ -8,20 +8,23 @@ class MyDesktopBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor(primaryBGColor),
-      appBar: AppBar(
-        title: const Text("Joe 'Stapes' Stapleton"),
-        flexibleSpace: const Image(
-          image: AssetImage(backgroudNavImage),
-          fit: BoxFit.cover,
-        ),
-        backgroundColor: HexColor(primaryNavColor),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            // First column
+            // nav column
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(backgroudContainerImage),
+                        fit: BoxFit.cover),
+                  ),
+                  width: 200),
+            ),
+
+            // second column
             Expanded(
               child: Column(
                 children: [
@@ -54,18 +57,6 @@ class MyDesktopBody extends StatelessWidget {
                 ],
               ),
             ),
-
-            // second column
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(backgroudContainerImage),
-                        fit: BoxFit.cover),
-                  ),
-                  width: 200),
-            )
           ],
         ),
       ),
@@ -77,5 +68,8 @@ BoxDecoration myBoxDecoration() {
   return BoxDecoration(
       border: Border.all(),
       color: HexColor(primaryBGColor),
-      borderRadius: BorderRadius.all(Radius.circular(5.0)));
+      borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+      boxShadow: const [
+        BoxShadow(blurRadius: 2, color: Colors.blueGrey, offset: Offset(1, 3))
+      ]);
 }
