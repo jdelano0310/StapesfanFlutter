@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:responsivetutorial/responsive/constants.dart';
 
 class MyDesktopBody extends StatelessWidget {
   const MyDesktopBody({Key? key}) : super(key: key);
@@ -6,9 +8,14 @@ class MyDesktopBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[200],
+      backgroundColor: HexColor(primaryBGColor),
       appBar: AppBar(
-        title: Text('D E S K T O P'),
+        title: const Text("Joe 'Stapes' Stapleton"),
+        flexibleSpace: const Image(
+          image: AssetImage(backgroudNavImage),
+          fit: BoxFit.cover,
+        ),
+        backgroundColor: HexColor(primaryNavColor),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -18,13 +25,13 @@ class MyDesktopBody extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  // youtube video
+                  // stand-up schedule
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: AspectRatio(
                       aspectRatio: 16 / 9,
                       child: Container(
-                        color: Colors.deepPurple[400],
+                        decoration: myBoxDecoration(),
                       ),
                     ),
                   ),
@@ -52,13 +59,23 @@ class MyDesktopBody extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                width: 200,
-                color: Colors.deepPurple[300],
-              ),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(backgroudContainerImage),
+                        fit: BoxFit.cover),
+                  ),
+                  width: 200),
             )
           ],
         ),
       ),
     );
   }
+}
+
+BoxDecoration myBoxDecoration() {
+  return BoxDecoration(
+      border: Border.all(),
+      color: HexColor(primaryBGColor),
+      borderRadius: BorderRadius.all(Radius.circular(5.0)));
 }
