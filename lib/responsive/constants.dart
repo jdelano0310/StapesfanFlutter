@@ -7,5 +7,5 @@ const primaryNavFontColor = "#565656";
 const primaryBGColor = "#e8e8e8";
 const primaryContainerColor = "#565656";
 
-const backgroudNavImage = "images/bg01.png";
-const backgroudContainerImage = "images/bg02.png";
+const backgroundNavImage = "images/nav-background.png";
+const backgroundContainerImage = "images/bg02.png";

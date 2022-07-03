@@ -14,15 +14,15 @@ class MyDesktopBody extends StatelessWidget {
           children: [
             // nav column
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(backgroudContainerImage),
+                        image: AssetImage(backgroundNavImage),
                         fit: BoxFit.cover),
                   ),
-                  width: 200),
-            ),
+                  width: 200,
+                )),
 
             // second column
             Expanded(
