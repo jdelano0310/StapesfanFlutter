@@ -9,20 +9,20 @@ class MyDesktopBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(right: 5.0),
         child: Row(
           children: [
             // nav column
             Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(backgroundNavImage),
-                        fit: BoxFit.cover),
-                  ),
-                  width: 200,
-                )),
+              padding: const EdgeInsets.only(right: 5.0),
+              child: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(backgroundNavImage), fit: BoxFit.cover),
+                ),
+                width: 200,
+              ),
+            ),
 
             // second column
             Expanded(
@@ -30,7 +30,7 @@ class MyDesktopBody extends StatelessWidget {
                 children: [
                   // stand-up schedule
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                     child: AspectRatio(
                       aspectRatio: 16 / 9,
                       child: Container(
@@ -47,7 +47,6 @@ class MyDesktopBody extends StatelessWidget {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            color: Colors.deepPurple[300],
                             height: 120,
                           ),
                         );
@@ -66,10 +65,6 @@ class MyDesktopBody extends StatelessWidget {
 
 BoxDecoration myBoxDecoration() {
   return BoxDecoration(
-      border: Border.all(),
-      color: HexColor(primaryBGColor),
-      borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-      boxShadow: const [
-        BoxShadow(blurRadius: 2, color: Colors.blueGrey, offset: Offset(1, 3))
-      ]);
+    color: HexColor(primaryBGColor),
+  );
 }
