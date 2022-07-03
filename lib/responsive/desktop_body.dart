@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:responsivetutorial/responsive/constants.dart';
+import 'package:stapesFanFlutter/responsive/constants.dart';
 
 class MyDesktopBody extends StatelessWidget {
   const MyDesktopBody({Key? key}) : super(key: key);
